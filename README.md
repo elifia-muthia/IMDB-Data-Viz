@@ -1,7 +1,7 @@
 # IMDB Data Visualization
 
 This was a project that I did in a group with 3 other people during a summer program. In this project, my main contribution is in writing the
-algorithms to categorize the movie posters by color and predict the IMDB rating of a movie based on the colors in its movie poster.
+algorithms to categorize the movie posters by color (in color_categorizing folder) and predict the IMDB rating of a movie based on the colors in its movie poster (in working code folder).
 
 ---
 
