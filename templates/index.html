@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="row section" id="welcomescreen">
+    <div id="welcometext" class="welcomebox">
+      <!--<svg width="100%" height="100%" id="introText"></svg> -->
+      In a world where a movie poster can make or break a movie, how significant is the color composition of the movie poster? Using Machine Learning heuristics we decompose a movie poster down to its dominant colors and try answer this very vital question. Introducing IMDBVis: a data driven insight into the complex variables that drive the multi-billion dollar movie industry.
+    </div>
+    <div id="welcomeimages" class="welcomebox">   
+    </div>
+  </div>
+  <hr>
+
+<div class="container">
+  <div class="row section" id="Data">
+    <h1 id='title'>Top Movie Dominant Colors</h1>
+
+    <div class="col-md-10" id="bubblePlot">
+      <svg width="900" height="700" id="bubbleChart"></svg>
+      <p>*** Area of circles indicate how well a movie did by gross dollar amount.
+      Bubbles are grouped on the y axis according to dominant color. Hover over specific bubbles to view more information on that movie. Showing the top 100 grossing movies for each genre only.</p>
+    </div>
+   
+    <div class="col-md-2">
+      <br>
+      <br>
+      <h5>Select a Genre</h5>
+        <select id="genreDropdown" class="dropdown">
+          <option disabled selected value> -- no genre selected -- </option>
+          <option value="action">Action</option>
+          <option value="animation">Animation</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+          <option value="horror">Horror</option>
+          <option value="romance">Romance</option>
+          <option value="sci-fi">Sci-Fi</option>
+          <option value="thriller">Thriller</option>
+        </select>
+  
+        <h5>Filters</h5>
+        <select id="filterDropdown" class="dropdown">
+          <option value="date">Date</option>
+          <option value="profit" selected>Profit</option>
+          <option value="score">IMDb Score</option>
+        </select>
+
+        <h5>Include Secondary Colors</h5>
+        <select id="includeSecColor" class="dropdown">
+          <option value="yes">Yes</option>
+          <option value="no" selected>No</option>
+        </select>
+        <hr>
+        <!-- where the movie icon displays -->
+        <div id="movieImageContainer"></div>
+        <div id="movieColorsContainer">
+          <svg width="100%" height="30px" id="colorsSvg"></svg>
+        </div>
+        
+        <div id="movieMetaData">
+          <h2 id="movieTitle"></h2>
+          <div id="movieYear"></div>
+          <div id="movieGenre"></div>
+          <div id="movieRating"></div>
+          <div id="movieGross"></div>
+          <div id="movieBudget"></div>
+          <div id="movieScore"></div>
+          <div id="movieColors"></div>
+        </div>  
+    </div>
+  </div>
+ <!-- new vis -->
+<hr>
+ <div class="row section" id="Vis">
+  <div class="col-md-6">
+    <h3 id='title'>Movie Dominant Colors By Percentage</h3>
+    <svg width="450" height="500" id="newVis2"></svg>
+  </div>
+
+  <div class="col-md-6" id="moviePrediction" data-form-submit="{{ formSubmit }}">
+    <h3 id="title">Movie Prediction Based on Dominant Color</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <form action="{{ url_for('user_movie') }}" accept="image/gif, image/jpeg" method="POST" onsubmit="return validateForm()"
+          name="moviePredictForm" enctype="multipart/form-data">
+          <div class="col-md-6 text-center">
+            <span class="moviePrediction">Select a genre:</span>
+            <select id="genreDropdown" name="genreDropdown"    style="margin-top: 20%; margin-bottom: 20%;">
+              <option disabled selected value> -- no genre selected -- </option>
+              <option value="Horror">Horror</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Action">Action</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Drama">Drama</option>
+              <option value="Animation">Animation</option>
+            </select> <br/>
+            <span class="moviePrediction">Upload your movie poster (jpg, gif):</span>  
+            <input type="file" name="image" id="pic">
+        
+            <input id="movieButton" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+
+        <div class="col-md-6">
+          {% if genre %}
+          <span>Predicted IMDB Score:</span>
+          <h2 id="movieScore">{{ score }}</h2>
+          Genre:
+          {{ genre }}
+          {% endif %}
+        </div>
+    </div>
+  </div>
+  <!-- end row -->
+ </div>
+
+  <!-- Next section -->
+  <hr>
+  <div class="row section" id="About">
+    <h1 id='title'>Team Members</h1>
+    <section id="speakers">
+	<div class="row1">
+		<div class="col-md-3">
+			<a href="https://github.com/elifiam" class="member-profile">
+				<div class="unhover_img">
+				<img src="static/img/elifia.jpeg" alt="" />
+				</div>
+				<div class="hover_img">
+				<img src="static/img/elifia.jpeg" alt="" />
+				</div>
+				<span>Elifia Muthia</span>
+			</a>	
+		</div>
+		<div class="col-md-3">
+			<a href="https://github.com/ehpark86" class="member-profile">
+				<div class="unhover_img">
+				<img src="static/img/eugene.png" alt="" />
+				</div>
+				<div class="hover_img">
+				<img src="static/img/eugene.png" alt="" />
+				</div>
+				<span>Eugene Park</span>
+			</a>		
+		</div>	
+		<div class="col-md-3">
+			<a href="https://github.com/karenl03" class="member-profile">
+				<div class="unhover_img">
+				<img src="static/img/karen.png" alt="" />
+				</div>
+				<div class="hover_img">
+				<img src="static/img/karen.png" alt="" />
+				</div>
+				<span>Karen Li</span>
+			</a>						
+		</div>	
+		<div class="col-md-3">
+			<a href="https://github.com/r4nj1t" class="member-profile">
+				<div class="unhover_img">
+				<img src="static/img/ranjit.png" alt="" />
+				</div>
+				<div class="hover_img">
+				<img src="static/img/ranjit.png" alt="" />
+				</div>
+				<span>Ranjit Nair</span>
+			</a>							
+		</div>		
+	</div> <!-- End First Row -->			
+</div>
+</section>
+  </div>
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="/static/js/bubbleChart.js"></script>
+<script src="/static/js/intro.js"></script>
+<script src="/static/js/newVis2.js"></script>
+<script src="/static/js/main.js"></script>
+<script>
+      function validateForm() {
+      let genreDropdown = document.forms["moviePredictForm"]["genreDropdown"].value;
+      let fileUpload = document.forms["moviePredictForm"]["image"].value;
+      console.log(genreDropdown)
+      console.log(fileUpload)
+      if (genreDropdown == "" || fileUpload == "") {
+      alert("Please select a genre and upload a file");
+      return false;
+        }
+      }
+</script>
+{% endblock %}

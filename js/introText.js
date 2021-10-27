@@ -1,0 +1,8 @@
+/*
+'use strict';
+
+// IIFE
+(function () {
+
+})();
+*/

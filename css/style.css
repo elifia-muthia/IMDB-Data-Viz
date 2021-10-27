@@ -1,0 +1,209 @@
+
+* {margin: 0; padding: 0;}
+
+p {line-height: 160%;}
+
+a {text-decoration: none; color: #fff; transition: all 0.1s ease-in;}
+img {border: 0;}
+
+body {
+	background: #fff;
+	color: #fff;
+	font-family: 'Farro', sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+.clear {clear: both;}
+
+/* Buttons */
+.btn {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 40px;
+	color: rgba(255,255,255, 0.95);
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 20px;
+	outline: 0;
+	transition: all 0.1s ease-in;
+}
+
+.btn-transparent {background: rgba(0,0,0, 0.2);}
+.btn-transparent:hover {background: rgba(0,0,0, 0.4);}
+
+/* Separators */
+.separator {
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.2);
+	width: 30px;
+	height: 5px;
+}
+
+
+
+
+
+#speakers {
+	background: #ffffff;
+	text-align: center;	
+}
+
+#speakers p {
+	padding: 20px 0 60px;
+	color: black;
+	font-family: 'Farro', sans-serif;
+	font-size: 16px;
+	letter-spacing: 0.2px;
+}
+#speakers a {
+	color: black;
+}
+
+#speakers h3 {
+	padding: 0 0 15px;
+	font-family: 'Farro';
+	font-size: 36px;
+	text-transform: uppercase;
+}
+
+#speakers h4  {
+	margin-top: -20px;
+	font-size: 32px;
+	font-weight: 700;
+}
+
+#speakers img {
+	width: 100%;
+	height: 100%;
+	max-width: 200px;
+	border-radius: 50%; 
+	border: 15px solid transparent; 
+	transition: all 0.1s ease-in;
+}
+	
+#speakers img:hover {
+	border: 10px solid #ffe700ff;
+	position: relative;
+	z-index: 10;
+	transition: all 0.1s ease-in;	
+}
+
+#speakers span {
+	padding: 8px 20px;
+	position: relative;
+	top: -50px;
+	left: -42px;
+	display: inline-block;
+	background: #ffe700ff;
+	border-radius: 0 16px 16px 0;
+	font-size: 16px;
+	text-decoration-color: black;
+}
+
+/* Member Image Hover Effect */
+.hover_img {
+  display: none
+}
+
+.member-profile:hover .unhover_img{
+  display: none;
+}
+
+.member-profile:hover .hover_img {
+  display: block;
+}
+
+.row2 {
+	display: none;
+}
+
+.row1 .col-md-3, .row2 .col-md-3 {
+	padding-bottom: 30px;
+}
+
+/* Mobile Devices Optimization */
+@media (min-width: 568px) and (max-width: 992px) {
+
+	.row1 .col-md-3, .row2 .col-md-3 {
+		display: inline-block;
+		max-width: 50%;
+	}
+
+	#speakers img {max-width: 300px;}
+
+}
+
+.rainbow2 {
+    background-image: -webkit-linear-gradient(left, #E0F8F7, #585858, #fff); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(left, #E0F8F7, #585858, #fff); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(left, #E0F8F7, #585858, #fff); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(left, #E0F8F7, #585858, #fff); /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to right, #E0F8F7, #585858, #fff); /* Standard syntax; must be last */
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.rainbow {
+
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, white 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}

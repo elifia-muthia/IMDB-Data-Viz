@@ -1,0 +1,169 @@
+/*
+welcomescreen
+*/
+
+#welcomescreen {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+  width: 100vw;
+  /*min-width: 712px; */
+}
+
+.welcomebox {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#welcometext {
+  padding: 0 8%;
+  line-height: 150%;
+  font-size: 20px;
+}
+
+#welcomeimages {
+  display: flex;
+  flex-flow: row wrap;
+}
+.welcomecontainer {
+  height: 33.33%;
+  width: 25%;
+  position: relative;
+}
+.welcomeposter {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+/* dropdown */
+.dropdown {   
+  padding-top: 10px;
+  width: 100%;
+  height: 20px;
+}
+.dropdown option {
+  
+}
+
+.moviePrediction {
+  white-space: nowrap;
+
+}
+
+#movieImageContainer {
+  width: 100%;
+  height: 100%;
+}
+#movieImageContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#movieColorsContainer {
+  height: 10%;
+  width: 100%;
+}
+
+#movieTitle {
+  font-size: 16px;
+  font-family: 'Farro', sans-serif;
+}
+#movieMetaData {
+  font-size: 12px;
+  font-family: 'Farro', sans-serif;
+}
+
+#logo {
+  max-height: 70px;
+}
+
+/* legend {
+  margin-top: 50%;
+} */
+/* .titleBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+} */
+
+#movieScore{
+  font-weight: bold;
+  animation-name: movieFont;
+  animation-duration: 4s;
+}
+
+@keyframes movieFont {
+  0%   {color: red;}
+  25%  {color: orange;}
+  50%  {color: blue;}
+  100% {color: green;}
+}
+
+#movieButton {
+  background-color: lightgray;
+}
+
+#title{
+  display: flex;
+  justify-content: center;
+  margin: 5% 0 5% 0;
+  width: 100%;
+}
+
+#pic {
+  color: red;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.navbar {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  font-family: 'Farro', sans-serif;
+  font-size: 20px;
+  justify-content: space-between;
+  list-style-type: none;
+  position: relative;
+  text-decoration-color: black;
+}
+.navbar a {
+  color: black;
+}
+
+.navbar a:hover {
+  text-decoration: underline overline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ffe700ff;
+}
+
+.navbar a:after {
+  color: black;
+}
+
+
+.footer {
+  position: fixed;
+  list-style-type: none;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffe700ff;
+  text-align: center;
+}
+
+/* .section {
+  margin: 5% 0 5% 0;
+} */
+.container {
+  font-family: 'Farro', sans-serif;
+}
+
+hr {
+  margin-top: 5%
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Populate DB</title>
+</head>
+<body>
+	<table class="t1" summary="Populated Db">
+	<caption></caption>
+		<thead>
+			<tr><th>index</th><th>movie_imdb_link</th><th>movie_title</th><th>plot_keywords</th><th>language</th><th>dominant_color</th><th>dominant_colors_array</th></tr>
+		</thead>
+		<tbody>
+		{% for movie in IMDB2movies %}
+			<tr>
+				<th>{{ movie.index }} </th>
+				<th>{{ movie.movie_imdb_link }} </th>
+				<th>{{ movie.movie_title }} </th>
+				<th>{{ movie.plot_keywords }} </th>
+				<th>{{ movie.language }} </th>
+				<th>{{ movie.dominant_color }} </th>
+				<th>{{ movie.dominant_colors_array }} </th>
+			</tr>
+			
+		{% endfor %}
+	  </tbody>
+	</table>
+
+
+</body>
+</html>
