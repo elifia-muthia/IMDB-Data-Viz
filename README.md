@@ -1,5 +1,10 @@
 # IMDB Data Visualization
 
+This was a project that I did in a group with 3 other people during a summer program. In this project, my main contribution is in writing the
+algorithms to categorize the movie posters by color and predict the IMDB rating of a movie based on the colors in its movie poster.
+
+---
+
 DESCRIPTION
 If a picture is worth a thousand words, a good movie poster might be worth a million (or more) ticket sales - a topic on every filmmaker’s mind as viewers consider whether to take a trip to the theater or to stay at home on the couch.  It’s a smart time to inform artistic decisions (or, for the more commercially-minded, hedge marketing moves) using data-driven insights.  This project will offer at least one meaningful solution in two parts, by assessing poster image colors and content using ML libraries and custom algorithms and by delivering cross-referenced results through an attractive and interactive interface.
 
